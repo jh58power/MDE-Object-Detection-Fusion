@@ -8,8 +8,6 @@ MDE 알고리즘을 통해 측정된 depth 이미지에 object detection 결과�
 
 ## Monocular-Depth-Estimation
 
----
-
 zhyever 의     **[Monocular-Depth-Estimation-Toolbox](https://github.com/zhyever/Monocular-Depth-Estimation-Toolbox)**     부터 fork 해온 Single Camera Depth 알고리즘
 
 > * Pytorch 기반
@@ -25,8 +23,6 @@ zhyever 의     **[Monocular-Depth-Estimation-Toolbox](https://github.com/zhyeve
 
 ## Object Detection
 
----
-
 * <MDE 관련 테스트 종료 후 추가 예정>
 
 
@@ -34,8 +30,6 @@ zhyever 의     **[Monocular-Depth-Estimation-Toolbox](https://github.com/zhyeve
 
 
 ## 진행 현황 
-
----
 
 - [ ] Monocular-Depth-Estimation Test
 - [ ] Object Detection Test
