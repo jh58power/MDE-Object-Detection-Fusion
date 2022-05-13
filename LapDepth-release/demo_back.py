@@ -42,8 +42,6 @@ args = parser.parse_args()
 
 assert (args.img_dir is not None) or (args.img_folder_dir is not None), "Expected name of input image file or folder"
 
-device = torch.device('cpu')
-
 if args.cuda and torch.cuda.is_available():
     os.environ["CUDA_VISIBLE_DEVICES"]= args.gpu_num
     cudnn.benchmark = True
@@ -62,7 +60,7 @@ if args.cuda and torch.cuda.is_available():
     Model = Model.cuda()
 Model = torch.nn.DataParallel(Model)
 assert (args.model_dir != ''), "Expected pretrained model directory"
-Model.load_state_dict(torch.load(args.model_dir, map_location=device))
+Model.load_state_dict(torch.load(args.model_dir))
 Model.eval()
 
 if args.img_dir is not None:
