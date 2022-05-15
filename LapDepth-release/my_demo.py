@@ -92,7 +92,8 @@ if cap.isOpened():
         out = out.cpu().detach().numpy().astype(np.uint16)
         out = (out/out.max())*255.0
 
-        cv2.imshow("camera", out/255)
+        cv2.imshow("depth", out/255)
+        cv2.imshow("camera", a)
         
         if cv2.waitKey(1) & 0xFF == 27:
             break
