@@ -1,3 +1,4 @@
 MDE_test/
 /LapDepth-release/pretrained/*
 out_image_raw/
+/YoloV5_ObjectDetection/yolov5s.pt
