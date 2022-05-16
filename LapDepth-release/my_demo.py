@@ -38,8 +38,8 @@ os.environ["CUDA_VISIBLE_DEVICES"]= '0';
 cudnn.benchmark = True
 
 
-model_dir = '/home/junha/MDE-Object-Detection-Fusion/LapDepth-release/pretrained/LDRN_NYU_ResNext101_pretrained_data.pkl'
-img_dir = '/home/junha/MDE-Object-Detection-Fusion/LapDepth-release/example/class.jpg'
+model_dir = './pretrained/LDRN_NYU_ResNext101_pretrained_data.pkl'
+img_dir = './example/class.jpg'
 
 max_depth = 10.0
 Model = LDRN(args)
