@@ -1,14 +1,12 @@
 import torch
 import numpy as np
 from model import LDRN
-import glob
 import torch.backends.cudnn as cudnn
-from PIL import Image
 from torchvision import transforms
 import torch.nn.functional as F
-import matplotlib.pyplot as plt
 import argparse
 import os
+import time
 import cv2
 
 parser = argparse.ArgumentParser(description='Laplacian Depth Residual Network training on KITTI',formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -52,13 +50,15 @@ Model.eval()
 normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 
 cap = cv2.VideoCapture(0)
-
+prevTime = 0
 if cap.isOpened():
+    time.sleep(0.5)
     # img = Image.open(img_dir)
     ret, a = cap.read()
-    
     while ret:
+        
         ret, a = cap.read()
+        a = cv2.resize(a,(480,256))
         img = a
         img = np.asarray(img, dtype=np.float32)/255.0
         if img.ndim == 2:
@@ -71,10 +71,9 @@ if cap.isOpened():
             img = img.cuda()
 
         _, org_h, org_w = img.shape
-
         img = img.unsqueeze(0)
-        new_h = 432
-        new_w = org_w * (432.0/org_h)
+        new_h = 320 #432
+        new_w = org_w * (new_h/org_h)
         new_w = int((new_w//16)*16)
         img = F.interpolate(img, (new_h, new_w), mode='bilinear')
 
@@ -90,11 +89,18 @@ if cap.isOpened():
         out = out[0,0]
         out = out*1000.0
         out = out.cpu().detach().numpy().astype(np.uint16)
-        out = (out/out.max())*255.0
+        out = (out/out.max())#*255.0
 
-        cv2.imshow("depth", out/255)
-        cv2.imshow("camera", a)
-        
+
+        curTime = time.time()
+        sec = curTime - prevTime
+        prevTime = curTime
+        fps = 1/(sec)
+        print(fps,end='\r')
+
+        cv2.imshow("depth", out)
+        # cv2.imshow("camera", a)
+
         if cv2.waitKey(1) & 0xFF == 27:
             break
 
