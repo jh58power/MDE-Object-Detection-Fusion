@@ -19,8 +19,6 @@ MDE 알고리즘을 통해 측정된 depth 이미지에 object detection 결과�
 
 * [Trained with NYU Depth V2](https://drive.google.com/file/d/13WyHCmQINyzprCerkOBT_Pf_W-PbWzBi/view?usp=sharing)
 
-* [Trained with KITTI](https://drive.google.com/file/d/1Xxxo3Zw4kVwBw43i6akQqjX2Go8vdP4H/view?usp=sharing)
-
 
 
 ./pretrained 폴더 생성 후 모델 넣기
