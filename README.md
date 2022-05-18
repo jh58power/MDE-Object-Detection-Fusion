@@ -6,26 +6,31 @@ MDE 알고리즘을 통해 측정된 depth 이미지에 object detection 결과�
 
 
 
-## Monocular-Depth-Estimation
+## LapDepth
 
-zhyever 의     **[Monocular-Depth-Estimation-Toolbox](https://github.com/zhyever/Monocular-Depth-Estimation-Toolbox)**     부터 fork 해온 Single Camera Depth 알고리즘
+> * Pretrained Model로 테스트 가능
+>* tjqansthd의 **[LapDepth-release](https://github.com/tjqansthd/LapDepth-release)**
+> 
 
-> * Pytorch 기반
->
-> * Training X : single camera
->
->   Training Y : lidar depth data
->
-> * Test : single Camera
->
+#### Pretrained Model
 
+1. Download pretrained model
 
+   > [Trained with NYU Depth V2](https://drive.google.com/file/d/13WyHCmQINyzprCerkOBT_Pf_W-PbWzBi/view?usp=sharing)
+
+2. ./pretrained 폴더 생성 후 모델 넣기
+
+3. demo.py 실행
+
+   > model_dir와 img_dir 수정 가능
+   >
+   > GPU가 없기에 CPU로 실행
+
+   
 
 ## Object Detection
 
-* <MDE 관련 테스트 종료 후 추가 예정>
-
-
+> * YOLOv5
 
 
 
