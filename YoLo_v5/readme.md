@@ -53,7 +53,7 @@ results.pandas().xyxy[0] # img1 predictions (pandas)
 >
 > * Output img
 >
-> <img src="/home/gahyeon/github/MDE-Object-Detection-Fusion/YoLo_v5/out_img.PNG" alt="out_img" style="zoom:80%;" />
+> <img src="./out_img.PNG" alt="out_img" style="zoom:80%;" />
 >
 > 
 
