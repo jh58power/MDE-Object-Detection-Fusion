@@ -1,0 +1,6 @@
+MDE_test/
+/LapDepth-release/pretrained/*
+out_image_raw/
+/YoloV5_ObjectDetection/yolov5s.pt
+/Depth_Yolo_Fusion/pretrained/*
+/NewCRF/model_zoo/*
